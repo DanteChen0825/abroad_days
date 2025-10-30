@@ -83,7 +83,26 @@ export function FuturePlanning({ records, person, personName }: FuturePlanningPr
   const currentRemaining = IMMIGRATION_RULES.ROLLING_12_MONTHS.maxDays - currentRolling12;
   
   // 考虑计划后的剩余天数
-  const afterPlannedRemaining = currentRemaining - plannedDays;
+  // 如果有未来计划，从最后一个计划返回日期往前推12个月计算
+  let afterPlannedRemaining = currentRemaining - plannedDays;
+  let afterPlannedUsedDays = currentRolling12 + plannedDays;
+  
+  if (plannedRecords.length > 0) {
+    // 找到最后一个计划返回日期
+    const lastPlannedReturn = new Date(Math.max(...plannedRecords.map(r => new Date(r.returnDate).getTime())));
+    
+    // 从最后返回日期往前推12个月
+    const rolling12Start = subMonths(lastPlannedReturn, 12);
+    
+    // 计算这个滚动12个月窗口内的所有出境天数
+    afterPlannedUsedDays = allRecords
+      .filter(r => isRecordOverlapping(r, rolling12Start, lastPlannedReturn))
+      .reduce((sum, r) => {
+        return sum + calculateDaysInPeriod(r, rolling12Start, lastPlannedReturn, 'conservative');
+      }, 0);
+    
+    afterPlannedRemaining = IMMIGRATION_RULES.ROLLING_12_MONTHS.maxDays - afterPlannedUsedDays;
+  }
   
   // 计算5年期限的离境天数（2025-10-15 到 2030-10-15）
   const fiveYearStart = new Date(2025, 9, 15); // 月份从0开始，9代表10月
@@ -122,7 +141,7 @@ export function FuturePlanning({ records, person, personName }: FuturePlanningPr
   
   const currentPercentage = calculatePercentage(currentRolling12, IMMIGRATION_RULES.ROLLING_12_MONTHS.maxDays);
   const afterPlannedPercentage = calculatePercentage(
-    currentRolling12 + plannedDays,
+    afterPlannedUsedDays,
     IMMIGRATION_RULES.ROLLING_12_MONTHS.maxDays
   );
 
@@ -155,7 +174,9 @@ export function FuturePlanning({ records, person, personName }: FuturePlanningPr
                 {Math.max(0, afterPlannedRemaining)}天
               </div>
               <div className="summary-note">
-                {afterPlannedRemaining < 0 ? '⚠️ 超出限制' : '✓ 安全范围'}
+                {afterPlannedRemaining < 0 
+                  ? `⚠️ 超出限制 (已用 ${afterPlannedUsedDays}/180天)` 
+                  : `✓ 安全范围 (已用 ${afterPlannedUsedDays}/180天)`}
               </div>
             </div>
           </>
