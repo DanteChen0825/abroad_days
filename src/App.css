@@ -699,6 +699,26 @@ body {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.record-card.planned-record {
+  background: linear-gradient(135deg, #fffbeb 0%, #fef3c7 100%);
+  border-color: #f59e0b;
+}
+
+.record-card.planned-record:hover {
+  border-color: #d97706;
+}
+
+.planned-badge {
+  display: inline-block;
+  background: #f59e0b;
+  color: white;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-right: 0.5rem;
+}
+
 .record-header {
   display: flex;
   justify-content: space-between;
@@ -819,24 +839,279 @@ body {
     padding: 1rem;
   }
 
+  .app-header {
+    padding: 1.5rem 1rem;
+    margin-bottom: 1.5rem;
+  }
+
   .app-header h1 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
   }
 
+  .app-header .subtitle {
+    font-size: 1rem;
+  }
+
+  .btn-load-sample {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  /* 统计面板优化 */
   .statistics-panel,
-  .data-input-section {
-    padding: 1.5rem;
+  .data-input-section,
+  .future-planning {
+    padding: 1rem;
   }
 
+  .statistics-panel h2,
+  .section-title {
+    font-size: 1.3rem;
+  }
+
+  .future-planning h3 {
+    font-size: 1.2rem;
+  }
+
+  /* 汇总卡片 - 移动端更紧凑 */
+  .planning-summary {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+
+  .summary-card {
+    padding: 1rem;
+  }
+
+  .summary-value {
+    font-size: 1.3rem;
+  }
+
+  .summary-label,
+  .summary-note {
+    font-size: 0.8rem;
+  }
+
+  /* 图表优化 */
+  .timeline-chart {
+    height: 180px;
+    padding: 0.5rem;
+    gap: 0.25rem;
+  }
+
+  .bar-container {
+    height: 120px;
+  }
+
+  .bar-label {
+    font-size: 0.6rem;
+  }
+
+  .bar-value {
+    font-size: 0.65rem;
+  }
+
+  /* 折线图SVG - 移动端调整 */
+  .line-chart {
+    padding: 1rem 0.5rem;
+  }
+
+  .chart-tooltip-float {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  /* 圆环图 - 移动端优化 */
+  .donut-chart-container {
+    padding: 1rem 0.5rem;
+    min-height: 220px;
+  }
+
+  .donut-chart-svg {
+    max-width: 100%;
+  }
+
+  /* Tab按钮优化 */
   .person-tabs {
-    flex-direction: column;
+    flex-direction: row;
+    gap: 0.5rem;
   }
 
   .tab-button {
     width: 100%;
+    padding: 0.625rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  /* 表单优化 */
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input,
+  .form-group select {
+    padding: 0.625rem;
+    font-size: 0.95rem;
+  }
+
+  .days-preview {
+    padding: 0.75rem;
+    font-size: 0.9rem;
+  }
+
+  .btn-primary {
+    padding: 0.75rem;
+    font-size: 0.95rem;
+  }
+
+  /* 记录列表优化 */
+  .records-container {
+    max-height: 500px;
+  }
+
+  .record-card {
+    padding: 0.875rem;
+  }
+
+  .record-date {
+    font-size: 0.9rem;
+  }
+
+  .record-emoji {
+    font-size: 1.25rem;
   }
 
   .days-info {
     grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .days-item .value {
+    font-size: 1rem;
+  }
+
+  /* 统计项优化 */
+  .stat-item {
+    padding: 0.625rem 0;
+  }
+
+  .stat-item .value {
+    font-size: 1rem;
+  }
+
+  /* 图例优化 */
+  .chart-legend {
+    gap: 1rem;
+    font-size: 0.8rem;
+  }
+
+  .legend-color {
+    width: 0.875rem;
+    height: 0.875rem;
+  }
+
+  /* 页脚优化 */
+  .app-footer {
+    padding: 1.5rem 1rem;
+    font-size: 0.9rem;
   }
 }
+
+/* 小屏幕进一步优化 */
+@media (max-width: 480px) {
+  .app {
+    padding: 0.75rem;
+  }
+
+  .app-header {
+    padding: 1rem;
+  }
+
+  .app-header h1 {
+    font-size: 1.3rem;
+  }
+
+  .app-header .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .statistics-panel,
+  .data-input-section,
+  .future-planning {
+    padding: 0.875rem;
+  }
+
+  .summary-card {
+    padding: 0.875rem;
+  }
+
+  .summary-value {
+    font-size: 1.2rem;
+  }
+
+  .timeline-chart {
+    height: 150px;
+  }
+
+  .bar-container {
+    height: 100px;
+  }
+
+  .bar-label {
+    font-size: 0.55rem;
+  }
+
+  .donut-chart-container {
+    min-height: 200px;
+  }
+
+  .record-date-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .record-emoji {
+    font-size: 1.1rem;
+  }
+}
+
+/* 横屏模式优化 */
+@media (max-width: 768px) and (orientation: landscape) {
+  .timeline-chart {
+    height: 150px;
+  }
+
+  .bar-container {
+    height: 100px;
+  }
+
+  .records-container {
+    max-height: 300px;
+  }
+
+  .donut-chart-container {
+    min-height: 180px;
+  }
+}
+
+/* 触摸设备优化 */
+@media (hover: none) and (pointer: coarse) {
+  .btn-primary,
+  .btn-delete,
+  .btn-load-sample,
+  .tab-button {
+    min-height: 44px; /* iOS 推荐的最小触摸目标 */
+  }
+
+  .record-card {
+    padding: 1rem;
+  }
+
+  /* 增大可点击区域 */
+  .btn-delete {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
+
