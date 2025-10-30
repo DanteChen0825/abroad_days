@@ -47,7 +47,7 @@ export function FuturePlanning({ records, person, personName }: FuturePlanningPr
     const remaining = IMMIGRATION_RULES.ROLLING_12_MONTHS.maxDays - totalDays;
     
     monthlyPredictions.push({
-      month: futureMonthEnd.toLocaleDateString('zh-CN', { year: 'numeric', month: 'short' }),
+      month: futureMonthEnd.toLocaleDateString('zh-CN', { month: 'short' }),
       used: totalDays,
       remaining: Math.max(0, remaining),
       percentage: calculatePercentage(totalDays, IMMIGRATION_RULES.ROLLING_12_MONTHS.maxDays)
@@ -211,13 +211,14 @@ export function FuturePlanning({ records, person, personName }: FuturePlanningPr
             <div className="timeline-chart">
               {monthlyPredictions.map((pred, index) => (
                 <div key={index} className="timeline-bar">
-                  <div className="bar-value">{pred.remaining}天</div>
                   <div className="bar-container">
                     <div
                       className={`bar-fill risk-${getRiskLevel(pred.percentage)}`}
                       style={{ height: `${(pred.remaining / 180) * 100}%` }}
                       title={`剩余 ${pred.remaining} 天 (已用 ${pred.used} / 180 天)`}
-                    />
+                    >
+                      <span className="bar-label-top">{pred.remaining}</span>
+                    </div>
                   </div>
                   <div className="bar-label">{pred.month}</div>
                 </div>

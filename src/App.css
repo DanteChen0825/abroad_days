@@ -152,14 +152,15 @@ body {
 
 .timeline-chart {
   display: flex;
-  gap: 0.5rem;
+  gap: 1.2rem;
   justify-content: space-between;
-  align-items: flex-end;
-  height: 200px;
-  padding: 1rem;
+  align-items: flex-start;
+  height: 250px;
+  padding: 1rem 1rem 2.5rem 1rem;
   background: #f9fafb;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
+  position: relative;
 }
 
 .timeline-bar {
@@ -167,22 +168,47 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0;
+  height: 100%;
+  position: relative;
 }
 
 .bar-container {
   width: 100%;
-  height: 150px;
+  height: 170px;
   background: #e5e7eb;
   border-radius: 0.25rem;
   display: flex;
   align-items: flex-end;
-  overflow: hidden;
+  overflow: visible;
+  position: relative;
+  margin-top: auto;
 }
 
 .bar-fill {
   width: 100%;
   transition: height 0.5s ease;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 0.25rem;
+}
+
+.bar-label-top {
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
 }
 
 .bar-fill.risk-safe {
@@ -203,12 +229,12 @@ body {
   writing-mode: horizontal-tb;
   text-align: center;
   font-weight: 500;
-}
-
-.bar-value {
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: #1f2937;
+  position: absolute;
+  bottom: -2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  width: max-content;
 }
 
 .chart-legend {
@@ -894,21 +920,23 @@ body {
 
   /* 图表优化 */
   .timeline-chart {
-    height: 180px;
-    padding: 0.5rem;
-    gap: 0.25rem;
+    height: 230px;
+    padding: 0.75rem 0.5rem 2.5rem 0.5rem;
+    gap: 0.75rem;
   }
 
   .bar-container {
-    height: 120px;
+    height: 140px;
   }
 
   .bar-label {
     font-size: 0.6rem;
+    bottom: -1.75rem;
   }
 
-  .bar-value {
+  .bar-label-top {
     font-size: 0.65rem;
+    padding: 0.2rem 0.4rem;
   }
 
   /* 折线图SVG - 移动端调整 */
@@ -1050,15 +1078,23 @@ body {
   }
 
   .timeline-chart {
-    height: 150px;
+    height: 200px;
+    gap: 0.5rem;
+    padding: 0.5rem 0.5rem 2.25rem 0.5rem;
   }
 
   .bar-container {
-    height: 100px;
+    height: 120px;
   }
 
   .bar-label {
     font-size: 0.55rem;
+    bottom: -1.5rem;
+  }
+
+  .bar-label-top {
+    font-size: 0.6rem;
+    padding: 0.15rem 0.35rem;
   }
 
   .donut-chart-container {
@@ -1079,11 +1115,16 @@ body {
 /* 横屏模式优化 */
 @media (max-width: 768px) and (orientation: landscape) {
   .timeline-chart {
-    height: 150px;
+    height: 200px;
+    padding: 0.5rem 0.5rem 2.25rem 0.5rem;
   }
 
   .bar-container {
-    height: 100px;
+    height: 120px;
+  }
+
+  .bar-label {
+    bottom: -1.5rem;
   }
 
   .records-container {
