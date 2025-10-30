@@ -1,4 +1,4 @@
-import React, { createContext, useContext, ReactNode, useEffect, useState } from 'react';
+import { createContext, useContext, ReactNode, useEffect, useState } from 'react';
 import type { TravelRecord, Person } from '../types';
 import { useLocalStorage } from '../hooks/useLocalStorage';
 

@@ -1,4 +1,3 @@
-import React from 'react';
 import type { Person } from '../types';
 import { useApp } from '../contexts/AppContext';
 

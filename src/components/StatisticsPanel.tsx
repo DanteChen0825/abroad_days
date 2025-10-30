@@ -1,4 +1,3 @@
-import React from 'react';
 import type { AbsenceStats } from '../types';
 import { calculatePercentage, getRiskMessage } from '../utils/ruleValidation';
 import { IMMIGRATION_RULES } from '../types';

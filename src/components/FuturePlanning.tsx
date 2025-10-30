@@ -3,7 +3,7 @@ import type { TravelRecord, Person } from '../types';
 import { IMMIGRATION_RULES } from '../types';
 import { calculateRolling12Months, calculateDaysInPeriod, isRecordOverlapping } from '../utils/dateCalculations';
 import { calculatePercentage } from '../utils/ruleValidation';
-import { subMonths, addMonths, addDays } from 'date-fns';
+import { subMonths, addMonths } from 'date-fns';
 
 interface FuturePlanningProps {
   records: TravelRecord[];
@@ -13,7 +13,6 @@ interface FuturePlanningProps {
 
 export function FuturePlanning({ records, person, personName }: FuturePlanningProps) {
   const today = new Date();
-  const oneYearLater = addMonths(today, 12);
   const [hoveredPoint, setHoveredPoint] = React.useState<{ date: Date; remaining: number; used: number; x: number; y: number } | null>(null);
   
   // 分离已完成和计划中的记录
