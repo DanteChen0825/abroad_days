@@ -26,7 +26,7 @@ export function AppProvider({ children }: AppProviderProps) {
   useEffect(() => {
     const loadDataFromJson = async () => {
       try {
-        const response = await fetch('/data/sample-data.json');
+        const response = await fetch(`${import.meta.env.BASE_URL}data/sample-data.json`);
         if (response.ok) {
           const data = await response.json();
           if (data.records && Array.isArray(data.records)) {
@@ -46,7 +46,7 @@ export function AppProvider({ children }: AppProviderProps) {
   // 手动加载示例数据的函数
   const loadSampleData = async () => {
     try {
-      const response = await fetch('/data/sample-data.json');
+      const response = await fetch(`${import.meta.env.BASE_URL}data/sample-data.json`);
       if (response.ok) {
         const data = await response.json();
         if (data.records && Array.isArray(data.records)) {
