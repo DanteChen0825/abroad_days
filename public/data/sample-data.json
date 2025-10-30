@@ -1,0 +1,184 @@
+{
+  "records": [
+    {
+      "id": "record-1",
+      "person": "spouse",
+      "departureDate": "2024-05-25",
+      "returnDate": "2024-08-09",
+      "daysOfficial": 75,
+      "daysConservative": 76,
+      "notes": "🇨🇳 中国",
+      "createdAt": 1716595200000
+    },
+    {
+      "id": "record-2",
+      "person": "spouse",
+      "departureDate": "2024-11-24",
+      "returnDate": "2025-03-23",
+      "daysOfficial": 118,
+      "daysConservative": 119,
+      "notes": "🇨🇳 中国",
+      "createdAt": 1732406400000
+    },
+    {
+      "id": "record-3",
+      "person": "self",
+      "departureDate": "2024-05-25",
+      "returnDate": "2024-08-09",
+      "daysOfficial": 75,
+      "daysConservative": 76,
+      "notes": "🇨🇳 中国",
+      "createdAt": 1716595200000
+    },
+    {
+      "id": "record-4",
+      "person": "self",
+      "departureDate": "2025-02-28",
+      "returnDate": "2025-03-23",
+      "daysOfficial": 22,
+      "daysConservative": 23,
+      "notes": "🇨🇳 中国",
+      "createdAt": 1740700800000
+    },
+    {
+      "id": "record-5",
+      "person": "self",
+      "departureDate": "2025-05-23",
+      "returnDate": "2025-06-30",
+      "daysOfficial": 37,
+      "daysConservative": 38,
+      "notes": "🇺🇸🇨🇦 美国/加拿大",
+      "createdAt": 1716422400000
+    },
+    {
+      "id": "record-6",
+      "person": "spouse",
+      "departureDate": "2025-05-23",
+      "returnDate": "2025-06-30",
+      "daysOfficial": 37,
+      "daysConservative": 38,
+      "notes": "🇺🇸🇨🇦 美国/加拿大",
+      "createdAt": 1716422400000
+    },
+    {
+      "id": "record-7",
+      "person": "self",
+      "departureDate": "2025-07-12",
+      "returnDate": "2025-07-15",
+      "daysOfficial": 2,
+      "daysConservative": 3,
+      "notes": "🇪🇸 西班牙",
+      "createdAt": 1720742400000
+    },
+    {
+      "id": "record-8",
+      "person": "spouse",
+      "departureDate": "2025-07-12",
+      "returnDate": "2025-07-15",
+      "daysOfficial": 2,
+      "daysConservative": 3,
+      "notes": "🇪🇸 西班牙",
+      "createdAt": 1720742400000
+    },
+    {
+      "id": "record-9",
+      "person": "self",
+      "departureDate": "2025-08-08",
+      "returnDate": "2025-08-11",
+      "daysOfficial": 2,
+      "daysConservative": 3,
+      "notes": "🇫🇷 法国",
+      "createdAt": 1723075200000
+    },
+    {
+      "id": "record-10",
+      "person": "spouse",
+      "departureDate": "2025-08-08",
+      "returnDate": "2025-08-11",
+      "daysOfficial": 2,
+      "daysConservative": 3,
+      "notes": "🇫🇷 法国",
+      "createdAt": 1723075200000
+    },
+    {
+      "id": "record-11",
+      "person": "self",
+      "departureDate": "2025-08-22",
+      "returnDate": "2025-08-26",
+      "daysOfficial": 3,
+      "daysConservative": 4,
+      "notes": "🇵🇱🇩🇪 波兰/德国",
+      "createdAt": 1724284800000
+    },
+    {
+      "id": "record-12",
+      "person": "spouse",
+      "departureDate": "2025-08-22",
+      "returnDate": "2025-08-26",
+      "daysOfficial": 3,
+      "daysConservative": 4,
+      "notes": "🇵🇱🇩🇪 波兰/德国",
+      "createdAt": 1724284800000
+    },
+    {
+      "id": "record-13",
+      "person": "self",
+      "departureDate": "2025-09-23",
+      "returnDate": "2025-09-29",
+      "daysOfficial": 5,
+      "daysConservative": 6,
+      "notes": "🇮🇹🇪🇸🇫🇷 意大利/西班牙/法国",
+      "createdAt": 1727049600000
+    },
+    {
+      "id": "record-14",
+      "person": "spouse",
+      "departureDate": "2025-09-23",
+      "returnDate": "2025-09-29",
+      "daysOfficial": 5,
+      "daysConservative": 6,
+      "notes": "🇮🇹🇪🇸🇫🇷 意大利/西班牙/法国",
+      "createdAt": 1727049600000
+    },
+    {
+      "id": "record-15",
+      "person": "self",
+      "departureDate": "2025-10-17",
+      "returnDate": "2025-10-20",
+      "daysOfficial": 2,
+      "daysConservative": 3,
+      "notes": "🇭🇷 克罗地亚",
+      "createdAt": 1729123200000
+    },
+    {
+      "id": "record-16",
+      "person": "spouse",
+      "departureDate": "2025-10-17",
+      "returnDate": "2025-10-20",
+      "daysOfficial": 2,
+      "daysConservative": 3,
+      "notes": "🇭🇷 克罗地亚",
+      "createdAt": 1729123200000
+    },
+    {
+      "id": "planned-1",
+      "person": "self",
+      "departureDate": "2025-11-07",
+      "returnDate": "2025-11-10",
+      "daysOfficial": 2,
+      "daysConservative": 3,
+      "notes": "🇨🇾 塞浦路斯（计划）",
+      "createdAt": 1730937600000
+    },
+    {
+      "id": "planned-2",
+      "person": "spouse",
+      "departureDate": "2025-11-07",
+      "returnDate": "2025-11-10",
+      "daysOfficial": 2,
+      "daysConservative": 3,
+      "notes": "🇨🇾 塞浦路斯（计划）",
+      "createdAt": 1730937600000
+    }
+  ]
+}
